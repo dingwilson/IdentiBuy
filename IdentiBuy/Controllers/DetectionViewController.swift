@@ -53,7 +53,11 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
 
-        sceneView.session.run(configuration)
+        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) -> Void in
+            node.removeFromParentNode()
+        }
+
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
 
         didLoadAdvertisement = false
     }
@@ -169,6 +173,8 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
             print(error)
         }
     }
+
+    @IBAction func unwindToVC(segue:UIStoryboardSegue) { }
 }
 
 extension UIFont {

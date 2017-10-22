@@ -7,5 +7,6 @@ target 'IdentiBuy' do
 
   # Pods for IdentiBuy
   pod 'Clarifai-Apple-SDK', '3.0.0-beta10'
+  pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4'
 
 end

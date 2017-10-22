@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +13,9 @@
     <customFonts key="customFonts">
         <array key="Montserrat-Light.ttf">
             <string>Montserrat-Light</string>
+        </array>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
         </array>
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
@@ -29,7 +33,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IdentiBuy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJ3-Gq-CqF">
                                 <rect key="frame" x="10" y="364" width="355" height="88"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="DpX-lc-NTr"/>
+                                    <constraint firstAttribute="height" constant="88" id="Ho0-js-dpy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="50"/>
                                 <color key="textColor" red="0.070588235289999995" green="0.38823529410000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,10 +42,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent" translatesAutoresizingMaskIntoConstraints="NO" id="gAz-3v-GdP">
                                 <rect key="frame" x="112" y="206" width="150" height="150"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap to bring your screen to life." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aM-pB-fe8">
-                                <rect key="frame" x="70" y="508" width="234" height="109"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap to begin the future of advertising in AR" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aM-pB-fe8">
+                                <rect key="frame" x="50" y="505" width="288" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="109" id="jBG-8H-ryA"/>
+                                    <constraint firstAttribute="height" constant="120" id="fab-SS-H9E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="24"/>
                                 <color key="textColor" red="0.070588235289999995" green="0.38823529410000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,27 +60,27 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UMt-Ws-egX" firstAttribute="centerX" secondItem="4aM-pB-fe8" secondAttribute="centerX" id="2iW-iV-0Ax"/>
-                            <constraint firstItem="gAz-3v-GdP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="186" id="CKh-Q3-h5w"/>
-                            <constraint firstItem="CJ3-Gq-CqF" firstAttribute="centerX" secondItem="4aM-pB-fe8" secondAttribute="centerX" id="Hyn-vc-Z86"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4aM-pB-fe8" secondAttribute="bottom" constant="50" id="Ihe-1V-8a8"/>
-                            <constraint firstItem="CJ3-Gq-CqF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Ngn-w3-xWg"/>
-                            <constraint firstAttribute="trailing" secondItem="UMt-Ws-egX" secondAttribute="trailing" id="U46-dr-i9w"/>
-                            <constraint firstItem="4aM-pB-fe8" firstAttribute="top" secondItem="CJ3-Gq-CqF" secondAttribute="bottom" constant="56" id="Vix-w0-2eD"/>
-                            <constraint firstItem="4aM-pB-fe8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="Vxp-SN-lxR"/>
-                            <constraint firstItem="gAz-3v-GdP" firstAttribute="centerX" secondItem="CJ3-Gq-CqF" secondAttribute="centerX" id="inx-dX-p25"/>
-                            <constraint firstItem="UMt-Ws-egX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mkj-o9-xus"/>
-                            <constraint firstItem="UMt-Ws-egX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oja-vP-xV4"/>
-                            <constraint firstItem="gAz-3v-GdP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="pYG-UP-Pgw"/>
-                            <constraint firstItem="UMt-Ws-egX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wh6-tS-ii5"/>
-                            <constraint firstItem="CJ3-Gq-CqF" firstAttribute="top" secondItem="gAz-3v-GdP" secondAttribute="bottom" constant="8" symbolic="YES" id="ybt-CD-AJ3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4aM-pB-fe8" secondAttribute="trailing" constant="37" id="9O8-aE-ADX"/>
+                            <constraint firstAttribute="trailing" secondItem="UMt-Ws-egX" secondAttribute="trailing" id="Aph-90-qjO"/>
+                            <constraint firstItem="gAz-3v-GdP" firstAttribute="centerX" secondItem="CJ3-Gq-CqF" secondAttribute="centerX" id="Ate-7Y-b4E"/>
+                            <constraint firstItem="UMt-Ws-egX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BVl-ga-tzi"/>
+                            <constraint firstItem="4aM-pB-fe8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Pz2-ND-wGP"/>
+                            <constraint firstItem="UMt-Ws-egX" firstAttribute="centerX" secondItem="gAz-3v-GdP" secondAttribute="centerX" id="TIX-l5-ibr"/>
+                            <constraint firstItem="UMt-Ws-egX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UO0-gs-nvh"/>
+                            <constraint firstItem="gAz-3v-GdP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="cHK-nT-x6b"/>
+                            <constraint firstItem="4aM-pB-fe8" firstAttribute="top" secondItem="CJ3-Gq-CqF" secondAttribute="bottom" constant="53" id="dFg-Jo-Kti"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4aM-pB-fe8" secondAttribute="bottom" constant="42" id="emn-GV-IfW"/>
+                            <constraint firstItem="CJ3-Gq-CqF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="lnY-ed-lAh"/>
+                            <constraint firstItem="gAz-3v-GdP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="186" id="pk1-b8-gMA"/>
+                            <constraint firstItem="CJ3-Gq-CqF" firstAttribute="top" secondItem="gAz-3v-GdP" secondAttribute="bottom" constant="8" symbolic="YES" id="wAo-Oh-K8U"/>
+                            <constraint firstItem="UMt-Ws-egX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yjO-kd-V64"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.600000000000001" y="52.623688155922046"/>
+            <point key="canvasLocation" x="37.5" y="52.5"/>
         </scene>
         <!--Detection View Controller-->
         <scene sceneID="blb-fp-Zk8">
@@ -109,50 +113,72 @@
             </objects>
             <point key="canvasLocation" x="1636" y="52.623688155922046"/>
         </scene>
-        <!--View Controller-->
+        <!--Product Spec View Controller-->
         <scene sceneID="99d-Vl-rl4">
             <objects>
-                <viewController id="Ydr-mL-ajL" sceneMemberID="viewController">
+                <viewController id="Ydr-mL-ajL" customClass="ProductSpecViewController" customModule="IdentiBuy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ryi-qN-wgf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAB-jH-BfV">
-                                <rect key="frame" x="16" y="572" width="343" height="75"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpecSheet" translatesAutoresizingMaskIntoConstraints="NO" id="doE-DX-nGb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuW-7Q-vba">
+                                <rect key="frame" x="202" y="572" width="157" height="75"/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.38823529410000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="gE9-Eg-ZHg"/>
+                                    <constraint firstAttribute="width" constant="157" id="fHe-Ee-ndd"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="24"/>
+                                <state key="normal" title="Buy Online">
+                                    <color key="titleColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressBuyButton:" destination="Ydr-mL-ajL" eventType="touchUpInside" id="0lM-d9-WTf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGB-aJ-RXS">
+                                <rect key="frame" x="16" y="572" width="160" height="75"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="24"/>
-                                <state key="normal" title="Buy Now">
+                                <state key="normal" title="Go Back">
                                     <color key="titleColor" red="0.070588235289999995" green="0.38823529410000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressBackButton:" destination="Ydr-mL-ajL" eventType="touchUpInside" id="viU-Qh-ZXQ"/>
+                                    <action selector="didPressBuyButton:" destination="Ydr-mL-ajL" eventType="touchUpInside" id="y18-Cf-RWv"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hvH-2U-qlN">
-                                <rect key="frame" x="16" y="20" width="225" height="225"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="225" id="hNR-CN-gqK"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="hAB-jH-BfV" secondAttribute="bottom" constant="20" symbolic="YES" id="4uv-Be-gix"/>
-                            <constraint firstItem="QU4-yW-LAp" firstAttribute="trailing" secondItem="hvH-2U-qlN" secondAttribute="trailing" constant="134" id="Vrn-7v-cdn"/>
-                            <constraint firstItem="hvH-2U-qlN" firstAttribute="leading" secondItem="ryi-qN-wgf" secondAttribute="leadingMargin" id="YPu-GB-4E0"/>
-                            <constraint firstItem="hvH-2U-qlN" firstAttribute="top" secondItem="QU4-yW-LAp" secondAttribute="top" id="c3Z-8W-rH5"/>
-                            <constraint firstItem="hAB-jH-BfV" firstAttribute="trailing" secondItem="ryi-qN-wgf" secondAttribute="trailingMargin" id="rCv-lW-w1i"/>
-                            <constraint firstItem="hvH-2U-qlN" firstAttribute="leading" secondItem="hAB-jH-BfV" secondAttribute="leading" id="yPU-mu-hBL"/>
+                            <constraint firstItem="doE-DX-nGb" firstAttribute="top" secondItem="ryi-qN-wgf" secondAttribute="top" id="2OQ-jy-g4X"/>
+                            <constraint firstItem="JGB-aJ-RXS" firstAttribute="leading" secondItem="ryi-qN-wgf" secondAttribute="leadingMargin" id="Bp2-fD-LzU"/>
+                            <constraint firstItem="JGB-aJ-RXS" firstAttribute="top" secondItem="VuW-7Q-vba" secondAttribute="top" id="COV-Dz-B44"/>
+                            <constraint firstItem="JGB-aJ-RXS" firstAttribute="baseline" secondItem="VuW-7Q-vba" secondAttribute="firstBaseline" id="GNc-zT-1YL"/>
+                            <constraint firstItem="VuW-7Q-vba" firstAttribute="leading" secondItem="JGB-aJ-RXS" secondAttribute="trailing" constant="26" id="Nd5-aY-wlQ"/>
+                            <constraint firstItem="VuW-7Q-vba" firstAttribute="trailing" secondItem="ryi-qN-wgf" secondAttribute="trailingMargin" id="TNb-Fq-XbS"/>
+                            <constraint firstItem="doE-DX-nGb" firstAttribute="bottom" secondItem="QU4-yW-LAp" secondAttribute="bottom" id="cUR-YJ-I7X"/>
+                            <constraint firstItem="doE-DX-nGb" firstAttribute="leading" secondItem="ryi-qN-wgf" secondAttribute="leading" id="j2I-jK-GDu"/>
+                            <constraint firstAttribute="bottom" secondItem="JGB-aJ-RXS" secondAttribute="bottom" constant="20" symbolic="YES" id="kpL-lI-FA5"/>
+                            <constraint firstItem="JGB-aJ-RXS" firstAttribute="top" secondItem="QU4-yW-LAp" secondAttribute="top" constant="552" id="mv8-rC-Vb7"/>
+                            <constraint firstAttribute="trailing" secondItem="doE-DX-nGb" secondAttribute="trailing" id="yKB-T8-RDO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QU4-yW-LAp"/>
                     </view>
+                    <connections>
+                        <segue destination="Agv-yG-0ig" kind="unwind" identifier="unwindToVC" unwindAction="unwindToVCWithSegue:" id="0uA-iH-ewc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGF-oV-0hi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Agv-yG-0ig" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3160.8000000000002" y="52.623688155922046"/>
+            <point key="canvasLocation" x="3160.5" y="52.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="SpecSheet" width="750" height="1334"/>
         <image name="transparent" width="1024" height="1024"/>
     </resources>
 </document>

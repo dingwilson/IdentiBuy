@@ -14,6 +14,7 @@
 		C8403D3D1F9CA40D00644CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8403D3C1F9CA40D00644CA3 /* Assets.xcassets */; };
 		C8403D401F9CA40D00644CA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8403D3E1F9CA40D00644CA3 /* LaunchScreen.storyboard */; };
 		C8403D4B1F9CA4C400644CA3 /* DetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8403D4A1F9CA4C400644CA3 /* DetectionViewController.swift */; };
+		C841C79B1F9CF49500A02002 /* ProductSpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C841C79A1F9CF49500A02002 /* ProductSpecViewController.swift */; };
 		C87E25C51F9CAFC200237A99 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C87E25C41F9CAFC200237A99 /* Keys.plist */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		C8403D411F9CA40D00644CA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8403D4A1F9CA4C400644CA3 /* DetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionViewController.swift; sourceTree = "<group>"; };
 		C8403D4C1F9CA50900644CA3 /* Montserrat */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Montserrat; path = "Assets/ Fonts/Montserrat"; sourceTree = SOURCE_ROOT; };
+		C841C79A1F9CF49500A02002 /* ProductSpecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSpecViewController.swift; sourceTree = "<group>"; };
 		C87E25C41F9CAFC200237A99 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				C8403D4A1F9CA4C400644CA3 /* DetectionViewController.swift */,
+				C841C79A1F9CF49500A02002 /* ProductSpecViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,10 +220,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-IdentiBuy/Pods-IdentiBuy-frameworks.sh",
 				"${PODS_ROOT}/Clarifai-Apple-SDK/Clarifai_Apple_SDK.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Clarifai_Apple_SDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -235,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8403D361F9CA40D00644CA3 /* AppDelegate.swift in Sources */,
+				C841C79B1F9CF49500A02002 /* ProductSpecViewController.swift in Sources */,
 				C81B9F4A1F9CC84300990447 /* Inceptionv3.mlmodel in Sources */,
 				C8403D4B1F9CA4C400644CA3 /* DetectionViewController.swift in Sources */,
 			);
