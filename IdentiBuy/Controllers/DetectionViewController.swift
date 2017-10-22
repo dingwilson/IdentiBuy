@@ -20,8 +20,6 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
     var visionRequests = [VNRequest]()
     let dispatchQueueML = DispatchQueue(label: "com.wilsonding.dispatchQueue")
 
-    var advertisementTimer = Timer()
-
     var didLoadAdvertisement = false
 
     override func viewDidLoad() {
@@ -58,16 +56,12 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.run(configuration)
 
         didLoadAdvertisement = false
-
-        advertisementTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(handleAdvertisement), userInfo: nil, repeats: true)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         sceneView.session.pause()
-
-        advertisementTimer.invalidate()
     }
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
@@ -84,67 +78,41 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
         let arHitTestResults : [SCNHitTestResult] = sceneView.hitTest(gestureRecognize.location(in: sceneView), options: nil)
 
         if arHitTestResults.count > 0 {
-            performSegue(withIdentifier: "test", sender: self)
+            performSegue(withIdentifier: "didHitAdvertisement", sender: nil)
         }
     }
 
-    @objc func handleAdvertisement() {
-        if self.didLoadAdvertisement {
-            self.advertisementTimer.invalidate()
-            return
-        }
+    func handleAdvertisement() {
+        let screenCentre : CGPoint = CGPoint(x: self.sceneView.bounds.midX, y: self.sceneView.bounds.midY)
 
-        if latestPrediction == "iPod" {
-            let screenCentre : CGPoint = CGPoint(x: self.sceneView.bounds.midX, y: self.sceneView.bounds.midY)
+        let arHitTestResults : [ARHitTestResult] = sceneView.hitTest(screenCentre, types: [.featurePoint])
 
-            let arHitTestResults : [ARHitTestResult] = sceneView.hitTest(screenCentre, types: [.featurePoint])
+        if let closestResult = arHitTestResults.first {
+            let transform : matrix_float4x4 = closestResult.worldTransform
+            let worldCoord : SCNVector3 = SCNVector3Make(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
 
-            if let closestResult = arHitTestResults.first {
-                let transform : matrix_float4x4 = closestResult.worldTransform
-                let worldCoord : SCNVector3 = SCNVector3Make(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
+            let node : SCNNode = createAdvertisement()
+            sceneView.scene.rootNode.addChildNode(node)
+            node.position = worldCoord
 
-                let node : SCNNode = createNewBubbleParentNode("T-Mobile Advertisement")
-                sceneView.scene.rootNode.addChildNode(node)
-                node.position = worldCoord
-            }
-            
             self.didLoadAdvertisement = true
-            self.advertisementTimer.invalidate()
         }
     }
 
-    func createNewBubbleParentNode(_ text : String) -> SCNNode {
+    func createAdvertisement() -> SCNNode {
         let billboardConstraint = SCNBillboardConstraint()
         billboardConstraint.freeAxes = SCNBillboardAxis.Y
 
-        var bubble: SCNText!
+        let imagePlane = SCNPlane(width: 0.5, height: 0.25)
+        imagePlane.firstMaterial?.diffuse.contents = UIImage(named: "Advertisement")
+        imagePlane.firstMaterial?.lightingModel = .constant
+        let advertisementNode = SCNNode(geometry: imagePlane)
 
-        bubble = SCNText(string: text, extrusionDepth: CGFloat(bubbleDepth))
+        let advertisementNodeParent = SCNNode()
+        advertisementNodeParent.addChildNode(advertisementNode)
+        advertisementNodeParent.constraints = [billboardConstraint]
 
-        var font = UIFont(name: "Futura", size: 0.15)
-        font = font?.withTraits(traits: .traitBold)
-        bubble.font = font
-        bubble.alignmentMode = kCAAlignmentCenter
-        bubble.firstMaterial?.diffuse.contents = UIColor.blue
-        bubble.firstMaterial?.specular.contents = UIColor.white
-        bubble.firstMaterial?.isDoubleSided = true
-        bubble.chamferRadius = CGFloat(bubbleDepth)
-
-        let (minBound, maxBound) = bubble.boundingBox
-        let bubbleNode = SCNNode(geometry: bubble)
-        bubbleNode.pivot = SCNMatrix4MakeTranslation( (maxBound.x - minBound.x)/2, minBound.y, bubbleDepth/2)
-        bubbleNode.scale = SCNVector3Make(0.2, 0.2, 0.2)
-
-        let sphere = SCNSphere(radius: 0.005)
-        sphere.firstMaterial?.diffuse.contents = UIColor.cyan
-        let sphereNode = SCNNode(geometry: sphere)
-
-        let bubbleNodeParent = SCNNode()
-        bubbleNodeParent.addChildNode(bubbleNode)
-        bubbleNodeParent.addChildNode(sphereNode)
-        bubbleNodeParent.constraints = [billboardConstraint]
-
-        return bubbleNodeParent
+        return advertisementNodeParent
     }
 
     func loopCoreMLUpdate() {
@@ -181,6 +149,12 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
             objectName = classifications.components(separatedBy: "-")[0]
             objectName = objectName.components(separatedBy: ",")[0]
             self.latestPrediction = objectName.replacingOccurrences(of: " ", with: "")
+
+            if !self.didLoadAdvertisement {
+                if self.latestPrediction == "iPod" {
+                    self.handleAdvertisement()
+                }
+            }
         }
     }
 
@@ -194,7 +168,6 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
         } catch {
             print(error)
         }
-
     }
 }
 
