@@ -7,21 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		805057C862B006F5DCEEBA87 /* Pods_IdentiBuy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD47FA459AAAC8C95F8A7904 /* Pods_IdentiBuy.framework */; };
+		C81B9F4A1F9CC84300990447 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C81B9F491F9CC81A00990447 /* Inceptionv3.mlmodel */; };
 		C8403D361F9CA40D00644CA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8403D351F9CA40D00644CA3 /* AppDelegate.swift */; };
-		C8403D381F9CA40D00644CA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8403D371F9CA40D00644CA3 /* ViewController.swift */; };
 		C8403D3B1F9CA40D00644CA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8403D391F9CA40D00644CA3 /* Main.storyboard */; };
 		C8403D3D1F9CA40D00644CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8403D3C1F9CA40D00644CA3 /* Assets.xcassets */; };
 		C8403D401F9CA40D00644CA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8403D3E1F9CA40D00644CA3 /* LaunchScreen.storyboard */; };
+		C8403D4B1F9CA4C400644CA3 /* DetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8403D4A1F9CA4C400644CA3 /* DetectionViewController.swift */; };
+		C87E25C51F9CAFC200237A99 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C87E25C41F9CAFC200237A99 /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52824CBBC39E4C96758D93A6 /* Pods-IdentiBuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentiBuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-IdentiBuy/Pods-IdentiBuy.release.xcconfig"; sourceTree = "<group>"; };
+		AD47FA459AAAC8C95F8A7904 /* Pods_IdentiBuy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdentiBuy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6F7ECCBE48A183BBDBF4C67 /* Pods-IdentiBuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentiBuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IdentiBuy/Pods-IdentiBuy.debug.xcconfig"; sourceTree = "<group>"; };
+		C81B9F491F9CC81A00990447 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		C8403D321F9CA40D00644CA3 /* IdentiBuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentiBuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8403D351F9CA40D00644CA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8403D371F9CA40D00644CA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8403D3A1F9CA40D00644CA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8403D3C1F9CA40D00644CA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8403D3F1F9CA40D00644CA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8403D411F9CA40D00644CA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8403D4A1F9CA4C400644CA3 /* DetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionViewController.swift; sourceTree = "<group>"; };
+		C8403D4C1F9CA50900644CA3 /* Montserrat */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Montserrat; path = "Assets/ Fonts/Montserrat"; sourceTree = SOURCE_ROOT; };
+		C87E25C41F9CAFC200237A99 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +38,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				805057C862B006F5DCEEBA87 /* Pods_IdentiBuy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0A07B2A66CF12EDCC2E57F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD47FA459AAAC8C95F8A7904 /* Pods_IdentiBuy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3530475A475D95E98CB6A451 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6F7ECCBE48A183BBDBF4C67 /* Pods-IdentiBuy.debug.xcconfig */,
+				52824CBBC39E4C96758D93A6 /* Pods-IdentiBuy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C8403D291F9CA40D00644CA3 = {
 			isa = PBXGroup;
 			children = (
 				C8403D341F9CA40D00644CA3 /* IdentiBuy */,
 				C8403D331F9CA40D00644CA3 /* Products */,
+				3530475A475D95E98CB6A451 /* Pods */,
+				2B0A07B2A66CF12EDCC2E57F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +83,25 @@
 		C8403D341F9CA40D00644CA3 /* IdentiBuy */ = {
 			isa = PBXGroup;
 			children = (
+				C8403D4C1F9CA50900644CA3 /* Montserrat */,
+				C8403D471F9CA45500644CA3 /* Controllers */,
 				C8403D351F9CA40D00644CA3 /* AppDelegate.swift */,
-				C8403D371F9CA40D00644CA3 /* ViewController.swift */,
 				C8403D391F9CA40D00644CA3 /* Main.storyboard */,
 				C8403D3C1F9CA40D00644CA3 /* Assets.xcassets */,
 				C8403D3E1F9CA40D00644CA3 /* LaunchScreen.storyboard */,
+				C87E25C41F9CAFC200237A99 /* Keys.plist */,
 				C8403D411F9CA40D00644CA3 /* Info.plist */,
+				C81B9F491F9CC81A00990447 /* Inceptionv3.mlmodel */,
 			);
 			path = IdentiBuy;
+			sourceTree = "<group>";
+		};
+		C8403D471F9CA45500644CA3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C8403D4A1F9CA4C400644CA3 /* DetectionViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +111,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8403D441F9CA40D00644CA3 /* Build configuration list for PBXNativeTarget "IdentiBuy" */;
 			buildPhases = (
+				BA570905DF5742CE0CBC5F0B /* [CP] Check Pods Manifest.lock */,
 				C8403D2E1F9CA40D00644CA3 /* Sources */,
 				C8403D2F1F9CA40D00644CA3 /* Frameworks */,
 				C8403D301F9CA40D00644CA3 /* Resources */,
+				EBC1C357E4D6BA85DAD3F94B /* [CP] Embed Pods Frameworks */,
+				A1DA7674175EF9B94B472D5D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C87E25C51F9CAFC200237A99 /* Keys.plist in Resources */,
 				C8403D401F9CA40D00644CA3 /* LaunchScreen.storyboard in Resources */,
 				C8403D3D1F9CA40D00644CA3 /* Assets.xcassets in Resources */,
 				C8403D3B1F9CA40D00644CA3 /* Main.storyboard in Resources */,
@@ -131,13 +175,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A1DA7674175EF9B94B472D5D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IdentiBuy/Pods-IdentiBuy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA570905DF5742CE0CBC5F0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IdentiBuy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBC1C357E4D6BA85DAD3F94B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IdentiBuy/Pods-IdentiBuy-frameworks.sh",
+				"${PODS_ROOT}/Clarifai-Apple-SDK/Clarifai_Apple_SDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Clarifai_Apple_SDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IdentiBuy/Pods-IdentiBuy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C8403D2E1F9CA40D00644CA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8403D381F9CA40D00644CA3 /* ViewController.swift in Sources */,
 				C8403D361F9CA40D00644CA3 /* AppDelegate.swift in Sources */,
+				C81B9F4A1F9CC84300990447 /* Inceptionv3.mlmodel in Sources */,
+				C8403D4B1F9CA4C400644CA3 /* DetectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +371,7 @@
 		};
 		C8403D451F9CA40D00644CA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6F7ECCBE48A183BBDBF4C67 /* Pods-IdentiBuy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -281,12 +381,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wilsonding.IdentiBuy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C8403D461F9CA40D00644CA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52824CBBC39E4C96758D93A6 /* Pods-IdentiBuy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,7 +397,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wilsonding.IdentiBuy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

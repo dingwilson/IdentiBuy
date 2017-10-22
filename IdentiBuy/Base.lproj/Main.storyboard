@@ -1,24 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Light.ttf">
+            <string>Montserrat-Light</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IdentiBuy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJ3-Gq-CqF">
+                                <rect key="frame" x="10" y="364" width="355" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="DpX-lc-NTr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="50"/>
+                                <color key="textColor" red="0.070588235289999995" green="0.38823529410000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent" translatesAutoresizingMaskIntoConstraints="NO" id="gAz-3v-GdP">
+                                <rect key="frame" x="112" y="206" width="150" height="150"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap to bring your screen to life." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aM-pB-fe8">
+                                <rect key="frame" x="70" y="508" width="234" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="jBG-8H-ryA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="24"/>
+                                <color key="textColor" red="0.070588235289999995" green="0.38823529410000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMt-Ws-egX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="kGA-ct-Fy8" kind="show" id="9wp-xw-X6O"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UMt-Ws-egX" firstAttribute="centerX" secondItem="4aM-pB-fe8" secondAttribute="centerX" id="2iW-iV-0Ax"/>
+                            <constraint firstItem="gAz-3v-GdP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="186" id="CKh-Q3-h5w"/>
+                            <constraint firstItem="CJ3-Gq-CqF" firstAttribute="centerX" secondItem="4aM-pB-fe8" secondAttribute="centerX" id="Hyn-vc-Z86"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4aM-pB-fe8" secondAttribute="bottom" constant="50" id="Ihe-1V-8a8"/>
+                            <constraint firstItem="CJ3-Gq-CqF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Ngn-w3-xWg"/>
+                            <constraint firstAttribute="trailing" secondItem="UMt-Ws-egX" secondAttribute="trailing" id="U46-dr-i9w"/>
+                            <constraint firstItem="4aM-pB-fe8" firstAttribute="top" secondItem="CJ3-Gq-CqF" secondAttribute="bottom" constant="56" id="Vix-w0-2eD"/>
+                            <constraint firstItem="4aM-pB-fe8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="Vxp-SN-lxR"/>
+                            <constraint firstItem="gAz-3v-GdP" firstAttribute="centerX" secondItem="CJ3-Gq-CqF" secondAttribute="centerX" id="inx-dX-p25"/>
+                            <constraint firstItem="UMt-Ws-egX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mkj-o9-xus"/>
+                            <constraint firstItem="UMt-Ws-egX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oja-vP-xV4"/>
+                            <constraint firstItem="gAz-3v-GdP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="pYG-UP-Pgw"/>
+                            <constraint firstItem="UMt-Ws-egX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wh6-tS-ii5"/>
+                            <constraint firstItem="CJ3-Gq-CqF" firstAttribute="top" secondItem="gAz-3v-GdP" secondAttribute="bottom" constant="8" symbolic="YES" id="ybt-CD-AJ3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="52.623688155922046"/>
+        </scene>
+        <!--Detection View Controller-->
+        <scene sceneID="blb-fp-Zk8">
+            <objects>
+                <viewController id="kGA-ct-Fy8" customClass="DetectionViewController" customModule="IdentiBuy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ued-sZ-mUK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgB-di-gbS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fgB-di-gbS" firstAttribute="bottom" secondItem="euq-xz-jOX" secondAttribute="bottom" id="XSY-Mj-dqx"/>
+                            <constraint firstItem="fgB-di-gbS" firstAttribute="leading" secondItem="ued-sZ-mUK" secondAttribute="leading" id="aOv-Ca-EiC"/>
+                            <constraint firstAttribute="trailing" secondItem="fgB-di-gbS" secondAttribute="trailing" id="mP2-AV-ifg"/>
+                            <constraint firstItem="fgB-di-gbS" firstAttribute="top" secondItem="ued-sZ-mUK" secondAttribute="top" id="n33-w2-VOn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="euq-xz-jOX"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="fgB-di-gbS" id="MuG-UW-Aso"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQr-9d-hiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782" y="53"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="transparent" width="1024" height="1024"/>
+    </resources>
 </document>
