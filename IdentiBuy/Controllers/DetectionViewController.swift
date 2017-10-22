@@ -20,6 +20,10 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
     var visionRequests = [VNRequest]()
     let dispatchQueueML = DispatchQueue(label: "com.wilsonding.dispatchQueue")
 
+    var advertisementTimer = Timer()
+
+    var didLoadAdvertisement = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,12 +56,18 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
         configuration.planeDetection = .horizontal
 
         sceneView.session.run(configuration)
+
+        didLoadAdvertisement = false
+
+        advertisementTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(handleAdvertisement), userInfo: nil, repeats: true)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         sceneView.session.pause()
+
+        advertisementTimer.invalidate()
     }
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
@@ -71,17 +81,35 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
     }
 
     @objc func handleTap(gestureRecognize: UITapGestureRecognizer) {
-        let screenCentre : CGPoint = CGPoint(x: self.sceneView.bounds.midX, y: self.sceneView.bounds.midY)
+        let arHitTestResults : [SCNHitTestResult] = sceneView.hitTest(gestureRecognize.location(in: sceneView), options: nil)
 
-        let arHitTestResults : [ARHitTestResult] = sceneView.hitTest(screenCentre, types: [.featurePoint])
+        if arHitTestResults.count > 0 {
+            performSegue(withIdentifier: "test", sender: self)
+        }
+    }
 
-        if let closestResult = arHitTestResults.first {
-            let transform : matrix_float4x4 = closestResult.worldTransform
-            let worldCoord : SCNVector3 = SCNVector3Make(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
+    @objc func handleAdvertisement() {
+        if self.didLoadAdvertisement {
+            self.advertisementTimer.invalidate()
+            return
+        }
 
-            let node : SCNNode = createNewBubbleParentNode(latestPrediction)
-            sceneView.scene.rootNode.addChildNode(node)
-            node.position = worldCoord
+        if latestPrediction == "iPod" {
+            let screenCentre : CGPoint = CGPoint(x: self.sceneView.bounds.midX, y: self.sceneView.bounds.midY)
+
+            let arHitTestResults : [ARHitTestResult] = sceneView.hitTest(screenCentre, types: [.featurePoint])
+
+            if let closestResult = arHitTestResults.first {
+                let transform : matrix_float4x4 = closestResult.worldTransform
+                let worldCoord : SCNVector3 = SCNVector3Make(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
+
+                let node : SCNNode = createNewBubbleParentNode("T-Mobile Advertisement")
+                sceneView.scene.rootNode.addChildNode(node)
+                node.position = worldCoord
+            }
+            
+            self.didLoadAdvertisement = true
+            self.advertisementTimer.invalidate()
         }
     }
 
@@ -91,11 +119,7 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
 
         var bubble: SCNText!
 
-        if text.replacingOccurrences(of: " ", with: "") == "iPod" {
-            bubble = SCNText(string: "iPhone", extrusionDepth: CGFloat(bubbleDepth))
-        } else {
-            bubble = SCNText(string: text, extrusionDepth: CGFloat(bubbleDepth))
-        }
+        bubble = SCNText(string: text, extrusionDepth: CGFloat(bubbleDepth))
 
         var font = UIFont(name: "Futura", size: 0.15)
         font = font?.withTraits(traits: .traitBold)
@@ -156,7 +180,7 @@ class DetectionViewController: UIViewController, ARSCNViewDelegate {
             var objectName:String = "…"
             objectName = classifications.components(separatedBy: "-")[0]
             objectName = objectName.components(separatedBy: ",")[0]
-            self.latestPrediction = objectName
+            self.latestPrediction = objectName.replacingOccurrences(of: " ", with: "")
         }
     }
 
